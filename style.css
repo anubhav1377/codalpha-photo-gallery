@@ -1,0 +1,107 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: #f4f4f4;
+    margin: 0;
+}
+
+.title {
+    margin-top: 20px;
+}
+
+.filter-buttons {
+    margin-bottom: 20px;
+}
+button {
+  background: linear-gradient(135deg, #43107a, #0345b6); /* gradient color */
+  color: rgb(101, 215, 216);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+button:hover {
+  background: linear-gradient(135deg, #ff512f, #dd2476);
+  transform: scale(1.1) rotate(-2deg); 
+  box-shadow: 0 6px 15px rgba(35, 135, 10, 0.3);
+}
+
+.filter-buttons button {
+    padding: 8px 15px;
+    margin: 5px;
+    border: none;
+    background: #333;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.filter-buttons button:hover {
+    background: #666;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 10px;
+    padding: 20px;
+}
+.gallery img {
+    width: 100%;
+    height: 200px;      
+    object-fit: cover;  
+    display: block;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s, filter 0.3s;
+}
+.gallery img:hover {
+    transform: scale(1.05);
+    filter: brightness(90%);
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    -o-transform: scale(1.05);
+}
+
+/* Lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox img {
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.close, .prev, .next {
+    position: absolute;
+    color: white;
+    font-size: 2em;
+    cursor: pointer;
+    user-select: none;
+}
+
+.close { top: 20px; right: 30px; }
+.prev { top: 50%; left: 30px; transform: translateY(-50%); }
+.next { top: 50%; right: 30px; transform: translateY(-50%); }
+
+/* Responsive */
+@media (max-width: 600px) {
+    .filter-buttons button {
+        padding: 6px 10px;
+        font-size: 14px;
+    }
+}
